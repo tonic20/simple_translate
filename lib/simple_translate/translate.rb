@@ -12,7 +12,9 @@ module SimpleTranslate
           define_method("#{field}=") { |v| self.send("#{field}_#{I18n.locale}=", v) }
 
           I18n.available_locales.each do |locale|
-            validates :"#{field}_#{locale}", :presence => true
+            if attribute_names.include? "#{field}_#{locale}"
+              validates :"#{field}_#{locale}", :presence => true
+            end
           end
         end
       end

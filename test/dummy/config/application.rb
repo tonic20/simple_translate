@@ -40,6 +40,7 @@ module Dummy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    I18n.available_locales = [:ru, :en, :br]
   end
 end
-
